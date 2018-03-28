@@ -6,7 +6,7 @@ public class PlayerMotor : BaseMotor
     {
         MoveVector = InputDirection();
         MoveVector = state.ProcessMotion(MoveVector);
-
+        RotationQuaternion = state.ProcessRotation(MoveVector);
         Move();
     }
 

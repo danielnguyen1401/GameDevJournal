@@ -10,6 +10,7 @@ public abstract class BaseMotor : MonoBehaviour
     [SerializeField] float _gravity = 25.0f;
 
     public Vector3 MoveVector { get; set; }
+    public Quaternion RotationQuaternion { get; set; }
 
     public float Speed
     {
@@ -39,5 +40,10 @@ public abstract class BaseMotor : MonoBehaviour
     protected virtual void Move()
     {
         charController.Move(MoveVector * Time.deltaTime);
+    }
+
+    protected virtual void Rotate()
+    {
+        thisTransform.rotation = RotationQuaternion;
     }
 }

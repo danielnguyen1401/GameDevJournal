@@ -6,4 +6,9 @@ public class WalkingState : BaseState
     {
         return input * motor.Speed;
     }
+
+    public override Quaternion ProcessRotation(Vector3 input)
+    {
+        return Quaternion.FromToRotation(transform.forward, input);
+    }
 }

@@ -286,6 +286,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\Camera\CameraMotor.cs" />
+    <Compile Include="Assets\Script\Camera\State\BaseCameraState.cs" />
+    <Compile Include="Assets\Script\Camera\State\FirstPersonCamera.cs" />
+    <Compile Include="Assets\Script\Camera\State\ThirdPersonCamera.cs" />
     <Compile Include="Assets\Script\Input\InputManager.cs" />
     <Compile Include="Assets\Script\Motor\BaseMotor.cs" />
     <Compile Include="Assets\Script\Motor\PlayerMotor.cs" />

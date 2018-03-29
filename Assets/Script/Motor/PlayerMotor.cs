@@ -2,11 +2,17 @@ using UnityEngine;
 
 public class PlayerMotor : BaseMotor
 {
+    private CameraMotor camMotor;
+
     protected override void Start()
     {
         base.Start();
         state = gameObject.AddComponent<WalkingState>();
         state.Construct();
+
+        // Init camera from player
+        camMotor = gameObject.AddComponent<CameraMotor>();
+        camMotor.Init();
     }
 
     protected override void UpdateMotor()

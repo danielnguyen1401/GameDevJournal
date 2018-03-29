@@ -2,12 +2,20 @@ using UnityEngine;
 
 public class PlayerMotor : BaseMotor
 {
+    protected override void Start()
+    {
+        base.Start();
+        state = gameObject.AddComponent<WalkingState>();
+        state.Construct();
+    }
+
     protected override void UpdateMotor()
     {
         MoveVector = InputDirection();
         MoveVector = state.ProcessMotion(MoveVector);
-        RotationQuaternion = state.ProcessRotation(MoveVector);
         Move();
+        state.Transition();
+        Ground();
     }
 
     Vector3 InputDirection()
